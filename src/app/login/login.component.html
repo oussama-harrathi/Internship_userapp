@@ -1,0 +1,28 @@
+<div class="frame-container">
+  <div class="login-form">
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="idNumber">ID Number</label>
+        <input type="text" id="idNumber" name="idNumber" placeholder="Enter your ID Number" [(ngModel)]="idNumber" required>
+        <div *ngIf="loginForm.controls['idNumber'].touched && loginForm.controls['idNumber'].hasError('required')" class="error-message">ID Number is required</div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="{{ showPassword ? 'text' : 'password' }}" id="password" name="password" placeholder="Enter your Password" [(ngModel)]="password" required>
+        <div *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].hasError('required')" class="error-message">Password is required</div>
+      </div>
+ <div class="show-password-container">
+  <input type="checkbox" id="showPassword" name="showPassword" [(ngModel)]="showPassword">
+  <label for="showPassword">Show Password</label>
+</div>
+
+
+
+      <div class="forgot-password">
+        <a href="#">Forgot Password?</a>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div *ngIf="loginError" class="error-message">{{ loginError }}</div>
+  </div>
+</div>

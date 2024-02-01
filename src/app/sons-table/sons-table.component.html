@@ -1,0 +1,100 @@
+<div class="frame-container">
+<div class="content-container">
+  <div class="image-container">
+    <img src="../../assets/imgs/images.jpg" alt="Side Image">
+  </div>
+  <div class="image-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Son Name</th>
+        <th>Birth Date</th>
+        <th>Study Institution</th>
+        <th>Level of Studies</th>
+        <th>Class</th>
+        <th>Grade Average</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="authService.loggedIn">
+        <tr *ngFor="let son of sons">
+          <td>{{ son.name }}</td>
+          <td>{{ son.birthdate | date:'shortDate' }}</td>
+          <td>
+              <ng-container *ngIf="son.canUpdate === 1; else showStudyInstitution">
+                <input class="input-field" [(ngModel)]="son.studyInstitution">
+              </ng-container>
+              <ng-template #showStudyInstitution>{{ son.studyInstitution }}</ng-template>
+            </td>
+         <td>
+              <ng-container *ngIf="son.canUpdate === 1; else showLevelOfStudies">
+                <select class="select-field" [(ngModel)]="son.levelOfStudies" (change)="onLevelChange(son)">
+                  <option value="أساسي">أساسي</option>
+                  <option value="إعدادي">إعدادي</option>
+                  <option value="ثانوي">ثانوي</option>
+                  <option value="تعليم عالي">تعليم عالي</option>
+                  <option value="ذوي الهمّة">ذوي الهمّة</option>
+                  <option value="تكوين مهني">تكوين مهني</option>
+                </select>
+              </ng-container>
+              <ng-template #showLevelOfStudies>{{ son.levelOfStudies }}</ng-template>
+            </td>
+          <td>
+            <ng-container *ngIf="son.canUpdate === 1; else showClassName">
+              <select *ngIf="son.levelOfStudies === 'أساسي'" [(ngModel)]="son.className">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+              <select *ngIf="son.levelOfStudies === 'إعدادي'" [(ngModel)]="son.className">
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+              </select>
+              <select *ngIf="son.levelOfStudies === 'ثانوي'" [(ngModel)]="son.className">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <select *ngIf="[ 'تعليم عالي', 'ذوي الهمّة', 'تكوين مهني'].includes(son.levelOfStudies)" [(ngModel)]="son.className">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+              </select>
+            </ng-container>
+            <ng-template #showClassName>{{ son.className }}</ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="son.canUpdate === 1; else showgradeAverage">
+              <input [(ngModel)]="son.gradeAverage">
+            </ng-container>
+            <ng-template #showgradeAverage>{{ son.gradeAverage }}</ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="son.canUpdate === 1; else updateClosed">
+              <button (click)="saveSonChanges(son)">Save</button>
+              <span *ngIf="son.isUpdated">Updated Successfully</span>
+            </ng-container>
+            <ng-template #updateClosed>
+              <span>Update Closed</span>
+            </ng-template>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
+
+</div>
+</div>

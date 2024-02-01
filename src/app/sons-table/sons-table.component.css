@@ -1,0 +1,190 @@
+/* Frame styles */
+.frame-container {
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px red;
+  background-color: rosybrown;
+  overflow-y: auto;
+  min-height: 85vh;
+}
+
+/* Container for the whole content */
+.content-container {
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Container for the image */
+.image-container {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+/* Style the image */
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Enhance table styles */
+.table-container {
+  flex: 2;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; 
+}
+
+/* Enhance table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+th, td {
+  padding: 8px; 
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+
+/* Add spacing between input and select fields */
+.input-field {
+  margin-right: 10px; 
+}
+
+.select-field {
+  margin-left: 10px; 
+}
+
+
+/* Highlight rows on hover */
+tbody tr:hover {
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+/* Alternating row colors */
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+/* Style input fields */
+input {
+  padding: 8px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #66afe9;
+  outline: none;
+}
+
+/* Style buttons */
+button {
+  background-color:#66afe9; 
+  color: #fff;
+  border: none;
+  padding: 8px 12px; 
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px; 
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #47a52a; 
+  transform: scale(1.05);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  background-color: #3c8e24; 
+  box-shadow: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Success message */
+span.updated-message {
+  color: #4CAF50;
+  margin-left: 10px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+span.updated-message.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* Media query for tablets and smaller screens */
+@media (max-width: 768px) {
+  .frame-container {
+    flex-direction: column; 
+    align-items: center;
+    padding: 10px; 
+  }
+  
+  .content-container {
+    padding: 10px; 
+  }
+  
+  .image-container,
+  .table-container {
+    padding: 5px; 
+  }
+  
+  table {
+    font-size: 5px; 
+  }
+}
+
+
+@media (max-width: 360px) {
+  .frame-container {
+    padding: 5px; 
+  }
+  
+  .image-container,
+  .table-container {
+    padding: 2px;
+    
+  }
+  
+  table {
+    font-size: 5px; 
+  }
+}
+
+

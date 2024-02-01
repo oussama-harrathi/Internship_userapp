@@ -1,0 +1,16 @@
+<nav>
+  <ul>
+    <li>
+      <a routerLink="/login">Login</a>
+    </li>
+    <li>
+      <a routerLink="/sons-table">Sons Table</a>
+    </li>
+      </ul> 
+    
+   <div *ngIf="authService.loggedIn">
+    <div class="message">Connected as employee with ID {{ authService.employeeId }}</div>
+    <button (click)="logout()">Logout</button>
+   </div>
+  
+</nav>
