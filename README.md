@@ -1,27 +1,51 @@
-# EmployerSonsTable
+# **SORETRAK Employee Data Update System 🔄**  
+*A platform that allows employees to update their sons' data annually, reducing the manual workload for HR.*
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+---
 
-## Development server
+## **About the Project**  
+This project was developed during my **internship at SORETRAK**. The system streamlines the annual process of updating employee sons' data, reducing the workload for HR. The platform consists of two key components:  
+1. **Employee Portal**: Where employees can update their data.  
+2. **Admin App**: To manage and control the data update process.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This project took **1 month** to set up and **1 month** to code.
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## **Features 🚀**
 
-## Build
+### **Employee Portal**  
+- **Login**: Employees log in with their **employment identifier** and **unique password**.  
+- **Data Update**: Employees can easily update their sons' data each year.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### **Admin App**  
+- **Access Control**: Admins can control whether updates are allowed for employees.  
+- **Data Management**: Admins manage the process and ensure the data is updated properly.
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## **Tech Stack 💻**  
+- **Frontend**: Angular  
+- **Backend**: Node.js and Express  
+- **Database**: Oracle DB  
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## **Demo 🎥**  
+Click the thumbnail or link below to watch the demo:  
+[![Watch the Demo](https://img.youtube.com/vi/SZmR0GPH1QU/maxresdefault.jpg)](https://youtu.be/SZmR0GPH1QU)  
 
-## Further help
+> **Note**: The demo does not showcase the **Admin App**.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+## **Contributions 🤝**  
+This project was developed during my internship at SORETRAK, and contributions are currently closed.  
+
+---
+
+## **License 📄**  
+This project is licensed under the **MIT License**..
+
+---
+
